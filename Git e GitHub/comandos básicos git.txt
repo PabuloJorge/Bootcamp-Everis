@@ -1,0 +1,9 @@
+git init 			inicia o repositório
+git add 			adiciona o arquivo na staged area
+git commit -m "mensagem"	adiciona o arquivo no repositório local 
+git status 			exibe a situação do repositório
+git push origin <branch>	"empurra" os arquivos para o repositório remoto
+git remote add origin <url>	faz o repositório local apontar para um repositório remoto
+git pull origin master		"puxa" a versão remota
+git clone <url>		clona um repositório
+

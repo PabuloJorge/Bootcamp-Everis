@@ -1,0 +1,10 @@
+Windows		linux
+dir		ls 	= listar pastas
+cd 			= selecionar diretório
+cd ..			= voltar/sair da pasta selecionada
+cls 		clear 	= limpar tela
+<TAB>		- 	= auto completar
+mkdir			= criar diretório/arquivo
+rmdir /S /Q	rm -rf	= deletar pasta/arquivo por completo
+mv 			= move o arquivo
+
