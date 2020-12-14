@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a30aeda8-de4d-4049-a7ff-97eaf1cb1774" activeEnvironment="Default" name="soapresponder" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="01c828e2-d625-412a-8f40-e3cb7078ad23" wsaVersion="NONE" name="SoapResponderBinding" type="wsdl" bindingName="{http://www.SoapClient.com/xml/SoapResponder.wsdl}SoapResponderBinding" soapVersion="1_1" anonymous="optional" definition="http://soapclient.com/xml/soapresponder.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://soapclient.com/xml/soapresponder.wsdl"><con:part><con:url>http://soapclient.com/xml/soapresponder.wsdl</con:url><con:content><![CDATA[<definitions name="SoapResponder" targetNamespace="http://www.SoapClient.com/xml/SoapResponder.wsdl" xmlns:tns="http://www.SoapClient.com/xml/SoapResponder.wsdl" xmlns:xsd1="http://www.SoapClient.com/xml/SoapResponder.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema targetNamespace="http://www.SoapClient.com/xml/SoapResponder.xsd" xmlns="http://www.w3.org/1999/XMLSchema"></schema>
+  </types>
+  <message name="Method1">
+    <part name="bstrParam1" type="xsd:string"/>
+    <part name="bstrParam2" type="xsd:string"/>
+  </message>
+  <message name="Method1Response">
+    <part name="bstrReturn" type="xsd:string"/>
+  </message>
+  <portType name="SoapResponderPortType">
+    <operation name="Method1" parameterOrder="bstrparam1 bstrparam2 return">
+      <input message="tns:Method1"/>
+      <output message="tns:Method1Response"/>
+    </operation>
+  </portType>
+  <binding name="SoapResponderBinding" type="tns:SoapResponderPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Method1">
+      <soap:operation soapAction="http://www.SoapClient.com/SoapObject"/>
+      <input>
+        <soap:body use="encoded" namespace="http://www.SoapClient.com/xml/SoapResponder.xsd" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://www.SoapClient.com/xml/SoapResponder.xsd" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SoapResponder">
+    <documentation>A SOAP service that echoes input parameters in the response</documentation>
+    <port name="SoapResponderPortType" binding="tns:SoapResponderBinding">
+      <soap:address location="http://www.soapclient.com/xml/soapresponder.wsdl"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.soapclient.com/xml/soapresponder.wsdl</con:endpoint></con:endpoints><con:operation id="65f998f8-dcb1-442b-a384-b102381c57d8" isOneWay="false" action="http://www.SoapClient.com/SoapObject" name="Method1" bindingOperationName="Method1" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1833ab89-f8a7-47e1-b527-02904986a7ce" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.soapclient.com/xml/soapresponder.wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://www.SoapClient.com/xml/SoapResponder.xsd">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:Method1 soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <bstrParam1 xsi:type="xsd:string">Oi</bstrParam1>\r
+         <bstrParam2 xsi:type="xsd:string">Tchau</bstrParam2>\r
+      </soap:Method1>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.SoapClient.com/SoapObject"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
